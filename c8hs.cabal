@@ -1,0 +1,57 @@
+cabal-version:      2.4
+name:               c8hs
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             Ilya Trukhanov
+maintainer:         lahvuun@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  MyLib
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.15.1.0, bytestring, data-sword, vector, random, sdl2
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable c8hs
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:
+        base ^>=4.15.1.0,
+        c8hs,
+        bytestring
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite c8hs-testsuite
+    type: exitcode-stdio-1.0
+    main-is: Tests.hs
+    build-depends: base ^>=4.15.1.0, c8hs
+    hs-source-dirs: tests
+    default-language: Haskell2010

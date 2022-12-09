@@ -1,0 +1,5 @@
+* CHIP-8 emulator in Haskell
+- Some demos and games work.
+- Input doesn't work.
+
+Having to convert between different integer types made we think it would be better to store everything in ~Int~ and siumlate ~Word8~ and ~Word16~ overflow/underflow on arithmetic operations. ~Int~ and not ~Integer~ because ~Int~ is used for indexing in the vector library I picked. Maybe ~Integer~ could work if the library used ~Ix~.
